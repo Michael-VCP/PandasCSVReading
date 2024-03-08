@@ -1,44 +1,54 @@
-#with open(&quot;weather_data.csv.csv&quot;) as data_file:
-# data = data_file.readlines()
-# print(data)
+#with open("weather_data.csv.csv") as data_file:
+#    data = data_file.readlines()
+#   print(data)
 #
 #import csv
 #
-#with open(&quot;weather_data.csv.csv&quot;) as data_file:
-# data = csv.reader(data_file)
-# temperatures = []
-# for row in data:
-# if row[1] != &quot;temp&quot;:
-# temperatures.append(int(row[1]))
-# print(temperatures)
+#with open("weather_data.csv.csv") as data_file:
+#    data = csv.reader(data_file)
+#    temperatures = []
+#    for row in data:
+#        if row[1] != "temp":
+#           temperatures.append(int(row[1]))
+#    print(temperatures)
+
 import pandas
-data = pandas.read_csv(&quot;weather_data.csv.csv&quot;)
+
+data = pandas.read_csv("weather_data.csv.csv")
 #print(type(data))
-#print(data[&quot;temp&quot;])
+#print(data["temp"])
+
 #data_dict = data.to_dict()
 #print(data_dict)
-#temp_list = data[&quot;temp&quot;].to_list()
+
+#temp_list = data["temp"].to_list()
 #print(len(temp_list))
+
 #average = sum(temp_list) / len(temp_list)
 #print(average)
+
 #Get Data in Columns
-#print(data[&quot;temp&quot;].max())
-#print(data[&quot;temp&quot;].mean())
-#print(data[&quot;condition&quot;])
+#print(data["temp"].max())
+#print(data["temp"].mean())
+
+#print(data["condition"])
 #print(data.condition)
+
 #Get Data in Rows
-#print(data[data.day == &quot;Monday&quot;])
+#print(data[data.day == "Monday"])
 #print(data[data.temp == data.temp.max()])
+
 #Converting Celsius to Fahrenheit
-monday = data[data.day == &quot;Monday&quot;]
+monday = data[data.day == "Monday"]
 monday_temp = monday.temp[0]
 monday_temp_F = monday_temp * 9/5 + 32
 print(monday_temp_F)
-#Creating a dataframe from scratch &amp; saving it as a CSV
 
+#Creating a dataframe from scratch & saving it as a CSV
 data_dict = {
-&quot;students&quot;: [&quot;Amy&quot;,&quot;James&quot;,&quot;Angela&quot;],
-&quot;scores&quot;: [76,56,65]
+    "students": ["Amy","James","Angela"],
+    "scores": [76,56,65]
 }
 data = pandas.DataFrame(data_dict)
-data.to_csv(&quot;new_data.csv&quot;)
+data.to_csv("new_data.csv")
+
